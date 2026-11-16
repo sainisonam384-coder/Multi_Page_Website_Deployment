@@ -1,0 +1,97 @@
+/* SimpleTech - shared styles for all pages */
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #222;
+  background: #f4f4f4;
+  line-height: 1.6;
+}
+
+/* header and navigation (Flexbox) */
+header {
+  background: #174a7e;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 { margin: 0; font-size: 26px; }
+
+nav { display: flex; gap: 20px; }
+nav a { color: white; text-decoration: none; padding: 4px 0; }
+nav a:hover { text-decoration: underline; }
+nav a.active { border-bottom: 2px solid white; }
+
+/* main content */
+main {
+  max-width: 850px;
+  min-height: 65vh;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+h2 { color: #174a7e; }
+
+/* services page (Grid) */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.service {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px 16px;
+  border-radius: 4px;
+}
+
+/* button and form */
+.button, button {
+  display: inline-block;
+  background: #174a7e;
+  color: white;
+  border: 0;
+  padding: 10px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.button:hover, button:hover { background: #0f3556; }
+
+label { display: block; margin-top: 12px; }
+input, textarea {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font: inherit;
+}
+button { margin-top: 14px; }
+#result { margin-top: 12px; font-weight: bold; }
+#result.error { color: #b00020; }
+#result.ok { color: #1b6e2d; }
+
+footer {
+  background: #dde3ea;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* tablets */
+@media (max-width: 800px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* phones */
+@media (max-width: 600px) {
+  header { flex-direction: column; gap: 8px; }
+  nav { gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .services-grid { grid-template-columns: 1fr; }
+  main { margin: 20px auto; }
+}
